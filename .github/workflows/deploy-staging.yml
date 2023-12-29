@@ -9,6 +9,7 @@ jobs:
         run: echo "Doing nothing"
   update-staging:
     permissions: write-all
+    needs: confirm-ci
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
