@@ -2,7 +2,12 @@ name: Deploy to staging
 on: workflow_dispatch
 
 jobs:
-  deploy-staging:
+  confirm-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do nothing
+        run: echo "Doing nothing"
+  update-staging:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
