@@ -3,7 +3,6 @@ on: workflow_dispatch
 
 jobs:
   deploy-staging:
-    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,5 +14,5 @@ jobs:
         run: |
           git fetch origin staging
           git checkout staging
-          git reset --hard origin/main
-          git push --force
+          git rebase origin/main
+          git push
